@@ -1,7 +1,3 @@
-<template>
-  <div class="hello"></div>
-</template>
-
 <script>
 import { Line } from 'vue-chartjs'
 export default {
@@ -21,7 +17,6 @@ export default {
     },
   },
   mounted() {
-    const dates = this.chartData.map((d) => d.date).reverse()
     const totals = this.chartData.map((d) => d.total).reverse()
     const {
       borderColor,
@@ -31,7 +26,6 @@ export default {
     } = this.chartColors
     this.renderChart(
       {
-        labels: dates,
         datasets: [
           {
             label: this.label,
@@ -48,6 +42,3 @@ export default {
   },
 }
 </script>
-
-<!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped></style>
